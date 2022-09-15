@@ -226,16 +226,16 @@ async def next_page(bot, query):
                                   callback_data="pages")]
         )
         btn.append(
-            [InlineKeyboardButton("🤔 𝐇𝐨𝐰 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 ", url=f"https://youtube.com/shorts/NUZSuwNQtps")])
+            [InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://t.me/moviesss4ers_Channel/14")])
         btn.append(
-            [InlineKeyboardButton('🚪 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')])
+            [InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
         btn.append(
-            [InlineKeyboardButton("🤔 𝐇𝐨𝐰 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 ", url=f"https://youtube.com/shorts/NUZSuwNQtps")])
-        btn.append([InlineKeyboardButton('🚪 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')])
+            [InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://t.me/moviesss4ers_Channel/14")])
+        btn.append([InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])
     else:
         btn.append(
             [
@@ -244,8 +244,8 @@ async def next_page(bot, query):
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
-        btn.append([InlineKeyboardButton("🤔 𝐇𝐨𝐰 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 ", url=f"https://youtube.com/shorts/NUZSuwNQtps")])
-        btn.append([InlineKeyboardButton('🚪 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')])
+        btn.append([InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://t.me/moviesss4ers_Channel/14")])
+        btn.append([InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
@@ -274,7 +274,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase If You Want This Movie Join Our Channel🌀https://t.me/lion_stage🌀')
+            k = await query.message.edit('This Movie Not Found In DataBase If You Want This Movie Join Our Channel https://t.me/moviesss4ers')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -512,7 +512,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒", show_alert=True)
+            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😏", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -543,15 +543,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬💬 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('❤️𝐂𝐇𝐀𝐍𝐍𝐄𝐋❤️', url='https://t.me/lion_stage'),
-            InlineKeyboardButton('🏆𝐓𝐑𝐔𝐌𝐁𝐎𝐓𝐒🏆', url='https://t.me/movie_time_botonly')
+            InlineKeyboardButton('Channel 👀', url='https://t.me/moviesss4ers'),
+            InlineKeyboardButton('Group 👀', url='https://t.me/moviei43')
         ], [
-            InlineKeyboardButton('🆘𝐇𝐄𝐋𝐏🆘', callback_data='help'),
-            InlineKeyboardButton('🤠𝐀𝐁𝐎𝐔𝐓🤠', callback_data='about')
+            InlineKeyboardButton('Help ⚡', callback_data='help'),
+            InlineKeyboardButton('About Me 💥', callback_data='about')
         ], [
-            InlineKeyboardButton('🦾𝐁𝐎𝐓𝐒𝐋𝐈𝐒𝐓🦾',url='https://t.me/movie_time_botonly/21')
+            InlineKeyboardButton('Any Queries DM Here ✅',url='https://t.me/Link_Reporter_Bot')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -568,8 +568,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Connection', callback_data='coct'),
             InlineKeyboardButton('Extra Mods', callback_data='extra')
         ], [
-            InlineKeyboardButton('🏠 𝐇𝐨𝐦𝐞', callback_data='start'),
-            InlineKeyboardButton('📊 𝐒𝐭𝐚𝐭𝐮𝐬', callback_data='stats')
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('📊 Status', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -579,11 +579,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🧑‍💻 𝐃𝐄𝐕', url='https://t.me/FLIGHER'),
-            InlineKeyboardButton('✍ 𝐒𝐎𝐔𝐑𝐂𝐄', url='https://urlsopen.com/tmgF')
+            InlineKeyboardButton('Developer 😎', url='https://t.me/Nexus_Shubhu'),
+            InlineKeyboardButton('Source Code', url='https://t.me/TeamEvamaria')
         ], [
-            InlineKeyboardButton('🏠 𝐇𝐨𝐦𝐞', callback_data='start'),
-            InlineKeyboardButton('🚪 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('🚪 Close it', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -666,7 +666,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('♻️', callback_data='refresh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -818,9 +818,9 @@ async def auto_filter(client, msg, spoll=False):
              )
 
     btn.append([
-                InlineKeyboardButton("🤔 𝐇𝐨𝐰 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 ", url=f"https://youtube.com/shorts/NUZSuwNQtps"),
+                InlineKeyboardButton("👉 How To Download 👈 ", url=f"https://youtube.com/shorts/NUZSuwNQtps"),
             ])
-    btn.append([InlineKeyboardButton('🚪 𝐂𝐋𝐎𝐒𝐄', callback_data='close_data')])     
+    btn.append([InlineKeyboardButton('Ok Close it 🙂', callback_data='close_data')])     
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:

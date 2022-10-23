@@ -861,25 +861,25 @@ async def auto_filter(client, msg, spoll=False):
         try:
           a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
-          await asyncio.sleep(300)
+          await asyncio.sleep(60)
           await message.delete()
           await a.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(300)
+            await asyncio.sleep(60)
             await hmm.delete()
             await message.delete()
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_photo(photo="https://te.legra.ph/file/cb01005e6846d248b1c31.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(300) 
+            await asyncio.sleep(60) 
             await fek.delete() 
             await msg.delete()
     else:
         fuk = await message.reply_photo(photo="https://te.legra.ph/file/cb01005e6846d248b1c31.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(300) 
+        await asyncio.sleep(60) 
         await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result For **{search}** Closed ️") if spoll:
     if spoll:
         await msg.message.edit(f"\n \n⚙️ Result  Closed ️")

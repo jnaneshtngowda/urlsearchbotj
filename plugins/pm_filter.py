@@ -856,7 +856,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"fek = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))"
+        cap = f"fek = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))"
     if imdb and imdb.get('poster'):
         try:
           a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))       

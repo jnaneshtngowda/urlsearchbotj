@@ -859,9 +859,8 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
-          a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
-                                      reply_markup=InlineKeyboardMarkup(btn))
-          await asyncio.sleep(60)
+          a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))       
+          await asyncio.sleep(AUTO_DELETE_MESSAGE_TIME)
           await message.delete()
           await a.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
@@ -878,12 +877,9 @@ async def auto_filter(client, msg, spoll=False):
             await fek.delete() 
             await msg.delete()
     else:
-        fuk = await message.reply_photo(photo="https://te.legra.ph/file/cb01005e6846d248b1c31.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(60) 
-        await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result For **{search}** Closed ️") if spoll:
+        await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
-        await msg.message.edit(f"\n \n⚙️ Result  Closed ️")
-
+        await msg.message.delete()
 
 
 async def advantage_spell_chok(msg):
